@@ -2,12 +2,13 @@
 
 namespace Kwhorne\WirementBreeze\Pages;
 
+use BackedEnum;
 use Filament\Pages\Page;
 use Illuminate\Contracts\Support\Htmlable;
 
 class MyProfilePage extends Page
 {
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static BackedEnum|string|null $navigationIcon = 'heroicon-o-document-text';
 
     protected static string $view = 'wirement-breeze::filament.pages.my-profile';
 

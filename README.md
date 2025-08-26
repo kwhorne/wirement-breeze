@@ -244,7 +244,7 @@ WirementBreezeCore::make()
 
 #### Create custom My Profile components
 
-In Breezy v2, you can now create custom Livewire components for the My Profile page and append them easily.
+In Wirement Breeze, you can now create custom Livewire components for the My Profile page and append them easily.
 
 1. Create a new Livewire component in your project using:
 
@@ -252,7 +252,7 @@ In Breezy v2, you can now create custom Livewire components for the My Profile p
 php artisan make:livewire MyCustomComponent
 ```
 
-2. Extend the `MyProfileComponent` class included with Breezy. This class implements Actions and Forms.
+2. Extend the `MyProfileComponent` class included with Wirement Breeze. This class implements Actions and Forms.
 
 ```php
 use Kwhorne\WirementBreeze\Livewire\MyProfileComponent;
@@ -300,7 +300,7 @@ class MyCustomComponent extends MyProfileComponent
 
 ```
 
-3. Within your Livewire component's view, you can use Breezy's `grid-section` blade component to match the style:
+3. Within your Livewire component's view, you can use Wirement Breeze's `grid-section` blade component to match the style:
 
 ```blade
 <x-wirement-breeze::grid-section md=2 title="Your title" description="This is the description">
@@ -319,7 +319,7 @@ class MyCustomComponent extends MyProfileComponent
 </x-wirement-breeze::grid-section>
 ```
 
-4. Finally, register your new component with Breezy:
+4. Finally, register your new component with Wirement Breeze:
 
 ```php
 use App\Livewire\MyCustomComponent;
@@ -417,7 +417,7 @@ class User extends Authenticatable
 }
 ```
 
-2. Enable Two Factor Authentication using the `enableTwoFactorAuthentication()` method on the Breezy plugin.
+2. Enable Two Factor Authentication using the `enableTwoFactorAuthentication()` method on the Wirement Breeze plugin.
 
 ```php
 WirementBreezeCore::make()
@@ -430,7 +430,7 @@ WirementBreezeCore::make()
 
 3. Adjust the 2FA page
 
-The Breezy 2FA page can be swapped for a custom implementation (see above), same as the Filament auth pages. This allows, for example, to define a custom auth layout like so:
+The Wirement Breeze 2FA page can be swapped for a custom implementation (see above), same as the Filament auth pages. This allows, for example, to define a custom auth layout like so:
 
 ```php
 use Kwhorne\WirementBreeze\Pages\TwoFactorPage;

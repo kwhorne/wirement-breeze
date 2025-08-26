@@ -6,6 +6,7 @@ use Filament\Facades\Filament;
 use Filament\Forms\Components;
 use Filament\Forms\Form;
 use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Group;
 use Filament\Notifications\Notification;
 
 class PersonalInfo extends MyProfileComponent
@@ -39,7 +40,7 @@ class PersonalInfo extends MyProfileComponent
 
     protected function getProfileFormSchema(): array
     {
-        $groupFields = Components\Group::make($this->getProfileFormComponents())
+        $groupFields = Group::make($this->getProfileFormComponents())
             ->columnSpan(2);
 
         return ($this->hasAvatars)

@@ -23,30 +23,21 @@
 - **TailwindCSS v4.0+** (compatible with modern CSS features)
 - **PHP 8.2+** (supports PHP 8.2, 8.3, and 8.4)
 
-## 📸 Features & Screenshots
+## 📸 Features
 
 ### My Profile - Personal information with avatar support
-![Screenshot of Profile with avatar support](./art/profile-with-avatar.png)
 
 ### Password updates with customizable validation rules
-![Screenshot of Two Factor codes](./art/password-update.png)
 
 ### Protected actions with password confirmation
-![Screenshot of Password confirmation action](./art/actions-confirm-password.png)
 
 ### Two-factor authentication with recovery codes
-![Screenshot of Two Factor codes](./art/2fa-confirm.png)
 
 ### Required two-factor authentication
-![Screenshot of forcing two factor auth](./art/2fa-must-enable.png)
 
 ### Sanctum token management
-![Screenshot of Sanctum token management](./art/sanctum-manage-tokens.png)
-![Screenshot of Sanctum token management](./art/sanctum-create.png)
 
 ### Browser session management
-![Screenshot of Browser Sessions](./art/browser-sessions.png)  
-![Screenshot of Close Browser Sessions Confirmation](./art/close-browser-sessions-confirm-password.png)
 
 ## 📦 Installation
 

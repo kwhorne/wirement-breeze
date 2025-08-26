@@ -4,6 +4,7 @@ namespace Kwhorne\WirementBreeze\Pages;
 
 use BackedEnum;
 use Filament\Pages\Page;
+use Filament\Panel;
 use Illuminate\Contracts\Support\Htmlable;
 
 class MyProfilePage extends Page
@@ -27,7 +28,7 @@ class MyProfilePage extends Page
         return __('wirement-breeze::default.profile.subheading') ?? null;
     }
 
-    public static function getSlug(): string
+    public static function getSlug(?Panel $panel = null): string
     {
         return filament('wirement-breeze')->slug();
     }

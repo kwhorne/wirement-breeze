@@ -256,8 +256,8 @@ php artisan make:livewire MyCustomComponent
 
 ```php
 use Kwhorne\WirementBreeze\Livewire\MyProfileComponent;
-use Filament\Schemas\Components\TextInput;
-use Filament\Schemas\Schema;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
 
 class MyCustomComponent extends MyProfileComponent
 {

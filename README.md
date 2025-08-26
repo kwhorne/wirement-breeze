@@ -503,29 +503,29 @@ WirementBreezeCore::make()
     ])
 ```
 
-### Tilpasse registreringsskjema
+### Customizing Registration Forms
 
-Filament v4+ introduserer forbedrede muligheter for å håndtere og tilpasse registreringsskjemaer sømløst. Denne funksjonen er nå en integrert del av Filament-funksjonaliteten. Følgelig er muligheten til å tilpasse registreringsskjemaer, som var tilgjengelig i Breezy v1, avskrevet i v2 til fordel for den mer omfattende og integrerte tilnærmingen som tilbys av Filament v4+. Laravel Daily har en kortfattet veiledning tilgjengelig som veileder brukere om å opprette og registrere tilpassede registreringsskjemaer mens de inkorporerer tilleggsfelt. [Sjekk ut veiledningen her](https://laraveldaily.com/post/filament-registration-form-extra-fields-choose-user-role) for trinn-for-trinn instruksjoner.
+Filament v4+ introduces enhanced capabilities for handling and customizing registration forms seamlessly. 
 
-## 🙋‍♀️ Ofte stilte spørsmål (FAQ)
+## 🙋‍♀️ Frequently Asked Questions (FAQ)
 
-### Hvordan fungerer 2FA-økter på tvers av flere paneler?
-Som standard bruker Wirement Breez samme guard som definert på ditt Panel. Standard er 'web'. Bare paneler som har registrert WirementBreezeCore-plugin vil ha tilgang til 2FA. Hvis flere paneler bruker 2FA og deler samme guard, trenger brukeren bare å skrive inn OTP-koden én gang for varigheten av økten.
+### How do 2FA sessions work across multiple panels?
+By default, Wirement Breeze uses the same guard as defined on your Panel. The default is 'web'. Only panels that have registered the WirementBreezeCore plugin will have access to 2FA. If multiple panels use 2FA and share the same guard, the user only needs to enter the OTP code once for the duration of the session.
 
-### Hvordan samhandler 2FA med MustVerifyEmail?
-Når 2FA er riktig konfigurert, blir brukeren bedt om OTP-koden før e-postverifisering.
+### How does 2FA interact with MustVerifyEmail?
+When 2FA is properly configured, the user is prompted for the OTP code before email verification.
 
-### Hvor lenge varer 2FA-økten?
-2FA-økten er den samme som Laravel-øktens levetid. Når brukeren er logget ut, eller økten utløper, må de skrive inn OTP-koden igjen.
+### How long does the 2FA session last?
+The 2FA session is the same as the Laravel session lifetime. When the user is logged out, or the session expires, they must enter the OTP code again.
 
-### Hvilke språk støttes?
-Pakken støtter 30+ språk inkludert norsk (nb). Du kan publisere og tilpasse oversettelser:
+### Which languages are supported?
+The package supports 30+ languages including Norwegian (nb). You can publish and customize translations:
 ```bash
 php artisan vendor:publish --tag="wirement-breeze-translations"
 ```
 
-### Kan jeg tilpasse utseendet?
-Ja! Du kan publisere og tilpasse alle visninger:
+### Can I customize the appearance?
+Yes! You can publish and customize all views:
 ```bash
 php artisan vendor:publish --tag="wirement-breeze-views"
 ```

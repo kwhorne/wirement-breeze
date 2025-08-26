@@ -11,7 +11,7 @@ use BaconQrCode\Writer;
 use Closure;
 use Filament\Contracts\Plugin;
 use Filament\Facades\Filament;
-use Filament\Forms;
+use Filament\Forms\Components;
 use Filament\Navigation\MenuItem;
 use Filament\Panel;
 use Filament\Support\Concerns\EvaluatesClosures;
@@ -194,7 +194,7 @@ class WirementBreezeCore implements Plugin
 
     public function getAvatarUploadComponent()
     {
-        $fileUpload = Forms\Components\FileUpload::make('avatar_url')
+        $fileUpload = Components\FileUpload::make('avatar_url')
             ->label(__('wirement-breeze::default.fields.avatar'))->avatar();
 
         return is_null($this->avatarUploadComponent) ? $fileUpload : $this->evaluate($this->avatarUploadComponent, namedInjections: [

@@ -158,7 +158,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
 
 
 ```php
-use Filament\Forms\Components\FileUpload;
+use Filament\Schemas\Components\FileUpload;
 
 WirementBreezeCore::make()
     ->avatarUploadComponent(fn($fileUpload) => $fileUpload->disableLabel())
@@ -256,8 +256,8 @@ php artisan make:livewire MyCustomComponent
 
 ```php
 use Kwhorne\WirementBreeze\Livewire\MyProfileComponent;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
+use Filament\Schemas\Components\TextInput;
+use Filament\Schemas\Schema;
 
 class MyCustomComponent extends MyProfileComponent
 {
@@ -350,7 +350,7 @@ If you want to customize only the fields and notification in the personal info c
 ```php
 namespace App\Livewire;
 
-use Filament\Forms;
+use Filament\Forms\Components;
 use Filament\Notifications\Notification;
 use Kwhorne\WirementBreeze\Livewire\PersonalInfo;
 
@@ -368,15 +368,15 @@ class CustomPersonalInfo extends PersonalInfo
         ];
     }
 
-    protected function getNameComponent(): Forms\Components\TextInput
+    protected function getNameComponent(): Components\TextInput
     {
-        return Forms\Components\TextInput::make('custom_name_field')
+        return Components\TextInput::make('custom_name_field')
             ->required();
     }
 
-    protected function getEmailComponent(): Forms\Components\TextInput
+    protected function getEmailComponent(): Components\TextInput
     {
-        return Forms\Components\TextInput::make('custom_email_field')
+        return Components\TextInput::make('custom_email_field')
             ->required();
     }
 

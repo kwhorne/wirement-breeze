@@ -3,7 +3,7 @@
 namespace Kwhorne\WirementBreeze\Actions;
 
 use Filament\Actions\Action;
-use Filament\Forms;
+use Filament\Forms\Components;
 
 class PasswordButtonAction extends Action
 {
@@ -24,7 +24,7 @@ class PasswordButtonAction extends Action
                     __('wirement-breeze::default.password_confirm.description')
                 )
                 ->form([
-                    Forms\Components\TextInput::make('current_password')
+                    Components\TextInput::make('password')
                         ->label(__('wirement-breeze::default.password_confirm.current_password'))
                         ->required()
                         ->password()

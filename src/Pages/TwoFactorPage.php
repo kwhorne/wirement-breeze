@@ -6,7 +6,7 @@ use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
 use DanHarrin\LivewireRateLimiting\WithRateLimiting;
 use Filament\Actions\Action;
 use Filament\Facades\Filament;
-use Filament\Forms;
+use Filament\Schemas\Components;
 use Filament\Http\Controllers\Auth\LogoutController;
 use Filament\Pages\Concerns\InteractsWithFormActions;
 use Filament\Pages\SimplePage;
@@ -52,7 +52,7 @@ class TwoFactorPage extends SimplePage
     protected function getFormSchema(): array
     {
         return [
-            Forms\Components\TextInput::make('code')
+            Components\TextInput::make('code')
                 ->label($this->usingRecoveryCode ? __('wirement-breeze::default.fields.2fa_recovery_code') : __('wirement-breeze::default.fields.2fa_code'))
                 ->placeholder($this->usingRecoveryCode ? __('wirement-breeze::default.two_factor.recovery_code_placeholder') : __('wirement-breeze::default.two_factor.code_placeholder'))
                 ->hint(new HtmlString(Blade::render('
@@ -62,7 +62,7 @@ class TwoFactorPage extends SimplePage
                 ->extraInputAttributes(['class' => 'text-center', 'autocomplete' => $this->usingRecoveryCode ? 'off' : 'one-time-code'])
                 ->autofocus()
                 ->suffixAction(
-                    Forms\Components\Actions\Action::make('cancel')
+                    Components\Actions\Action::make('cancel')
                         ->ToolTip(__('wirement-breeze::default.cancel'))
                         ->icon('heroicon-o-x-circle')
                         ->action(function () {

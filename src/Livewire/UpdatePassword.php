@@ -3,7 +3,7 @@
 namespace Kwhorne\WirementBreeze\Livewire;
 
 use Filament\Facades\Filament;
-use Filament\Forms;
+use Filament\Forms\Components;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Hash;
@@ -27,18 +27,18 @@ class UpdatePassword extends MyProfileComponent
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('current_password')
+                Components\TextInput::make('current_password')
                     ->label(__('wirement-breeze::default.password_confirm.current_password'))
                     ->required()
                     ->password()
                     ->rule('current_password')
                     ->visible(filament('wirement-breeze')->getPasswordUpdateRequiresCurrent()),
-                Forms\Components\TextInput::make('new_password')
+                Components\TextInput::make('new_password')
                     ->label(__('wirement-breeze::default.fields.new_password'))
                     ->password()
                     ->rules(filament('wirement-breeze')->getPasswordUpdateRules())
                     ->required(),
-                Forms\Components\TextInput::make('new_password_confirmation')
+                Components\TextInput::make('new_password_confirmation')
                     ->label(__('wirement-breeze::default.fields.new_password_confirmation'))
                     ->password()
                     ->same('new_password')

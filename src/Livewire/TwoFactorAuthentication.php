@@ -4,7 +4,7 @@ namespace Kwhorne\WirementBreeze\Livewire;
 
 use Filament\Actions\Action;
 use Filament\Facades\Filament;
-use Filament\Forms;
+use Filament\Forms\Components;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Collection;
 use Kwhorne\WirementBreeze\Actions\PasswordButtonAction;
@@ -63,7 +63,7 @@ class TwoFactorAuthentication extends MyProfileComponent
             ->label(__('wirement-breeze::default.profile.2fa.actions.confirm_finish'))
             ->modalWidth('sm')
             ->form([
-                Forms\Components\TextInput::make('code')
+                Components\TextInput::make('code')
                     ->label(__('wirement-breeze::default.fields.2fa_code'))
                     ->placeholder('###-###')
                     ->required(),

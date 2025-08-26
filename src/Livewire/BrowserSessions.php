@@ -3,9 +3,9 @@
 namespace Kwhorne\WirementBreeze\Livewire;
 
 use Carbon\Carbon;
-use Filament\Forms;
-use Filament\Forms\Components\Actions;
+use Filament\Forms\Components;
 use Filament\Forms\Form;
+use Filament\Forms\Components\Actions;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -31,7 +31,7 @@ class BrowserSessions extends MyProfileComponent
     {
         return $form
             ->schema([
-                Forms\Components\ViewField::make('browserSessions')
+                Components\ViewField::make('browserSessions')
                     ->label(__('wirement-breeze::default.profile.browser_sessions.label'))
                     ->hiddenLabel()
                     ->view($this->listView)
@@ -45,7 +45,7 @@ class BrowserSessions extends MyProfileComponent
                         ->modalDescription(__('wirement-breeze::default.profile.browser_sessions.logout_description'))
                         ->modalSubmitActionLabel(__('wirement-breeze::default.profile.browser_sessions.logout_action'))
                         ->form([
-                            Forms\Components\TextInput::make('password')
+                            Components\TextInput::make('password')
                                 ->password()
                                 ->revealable()
                                 ->label(__('wirement-breeze::default.fields.password'))

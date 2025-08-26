@@ -4,7 +4,8 @@ namespace Kwhorne\WirementBreeze\Livewire;
 
 use Carbon\Carbon;
 use Filament\Facades\Filament;
-use Filament\Forms;
+use Filament\Forms\Components;
+use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
@@ -29,6 +30,11 @@ class SanctumTokens extends MyProfileComponent implements Tables\Contracts\HasTa
     public function mount()
     {
         $this->user = Filament::getCurrentPanel()->auth()->user();
+    }
+
+    public function form(Form $form): Form
+    {
+        return $form;
     }
 
     protected function getTableQuery(): Builder
@@ -67,16 +73,16 @@ class SanctumTokens extends MyProfileComponent implements Tables\Contracts\HasTa
     protected function getSanctumFormSchema(bool $edit = false): array
     {
         return [
-            Forms\Components\TextInput::make('token_name')
+            Components\TextInput::make('token_name')
                 ->label(__('wirement-breeze::default.fields.token_name'))
                 ->required()
                 ->hidden($edit),
-            Forms\Components\CheckboxList::make('abilities')
+            Components\CheckboxList::make('abilities')
                 ->label(__('wirement-breeze::default.fields.abilities'))
                 ->options(filament('wirement-breeze')->getSanctumPermissions())
                 ->columns($this->abilityColumns)
                 ->required(),
-            Forms\Components\DatePicker::make('expires_at')
+            Components\DatePicker::make('expires_at')
                 ->label(__('wirement-breeze::default.fields.token_expiry')),
 
         ];

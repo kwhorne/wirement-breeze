@@ -32,12 +32,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Kwhorne\\WirementBreezeee\\": "src/"
+            "Kwhorne\\WirementBreeze\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Kwhorne\\WirementBreezeee\\Tests\\": "tests/"
+            "Kwhorne\\WirementBreeze\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -68,10 +68,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Kwhorne\\WirementBreezeee\\WirementBreezeeeServiceProvider"
+                "Kwhorne\\WirementBreeze\\WirementBreezeServiceProvider"
             ],
             "aliases": {
-                "WirementBreezeee": "Kwhorne\\WirementBreezeee\\Facades\\WirementBreezeee"
+                "WirementBreeze": "Kwhorne\\WirementBreeze\\Facades\\WirementBreeze"
             }
         }
     },

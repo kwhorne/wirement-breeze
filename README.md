@@ -18,10 +18,10 @@
 - ⚡ **Quick installation** - ready in minutes!
 
 ### 🚀 Compatibility
-- **Filament v4.0+**
-- **TailwindCSS v4.0+**
-- **Laravel 11+ & 12+**
-- **PHP 8.2+**
+- **Laravel 12+** (with full support for Laravel 12 features)
+- **Filament v4.0+** (optimized for latest Filament features)
+- **TailwindCSS v4.0+** (compatible with modern CSS features)
+- **PHP 8.2+** (supports PHP 8.2, 8.3, and 8.4)
 
 ## 📸 Features & Screenshots
 
@@ -74,7 +74,7 @@ php artisan vendor:publish --tag="wirement-breeze-translations"
 You must enable Wirement Breez by adding the class to your Filament Panel's `plugin()` or `plugins([])` method:
 
 ```php
-use Kwhorne\WirementBreezeeee\WirementBreezeeeeCore;
+use Kwhorne\WirementBreeze\WirementBreezeCore;
 
 class CustomersPanelProvider extends PanelProvider
 {
@@ -83,7 +83,7 @@ class CustomersPanelProvider extends PanelProvider
         return $panel
             ...
             ->plugin(
-                WirementBreezeeeeCore::make()
+                WirementBreezeCore::make()
             )
     }
 }
@@ -94,7 +94,7 @@ class CustomersPanelProvider extends PanelProvider
 Wirement Breez will use the `authGuard` set on the Filament Panel that you create. You may update the authGuard as you please:
 
 ```php
-use Kwhorne\WirementBreezeeee\WirementBreezeeeeCore;
+use Kwhorne\WirementBreeze\WirementBreezeCore;
 
 class CustomersPanelProvider extends PanelProvider
 {
@@ -104,7 +104,7 @@ class CustomersPanelProvider extends PanelProvider
             ...
             ->authGuard('customers')
             ->plugin(
-                WirementBreezeeeeCore::make()
+                WirementBreezeCore::make()
             )
     }
 }
@@ -119,7 +119,7 @@ Enable the My Profile page with configuration options.
 **NOTE:** if you are using avatars,
 
 ```php
-WirementBreezeeeeCore::make()
+WirementBreezeCore::make()
     ->myProfile(
         shouldRegisterUserMenu: true, // Sets the 'account' link in the panel User Menu (default = true)
         userMenuLabel: 'My Profile', // Customizes the 'account' link label in the panel User Menu (default = null)
@@ -135,7 +135,7 @@ WirementBreezeeeeCore::make()
 You can also use a custom My Profile page class by extending the default one, and registering it with the plugin.
 
 ```php
-WirementBreezeeeeCore::make()
+WirementBreezeCore::make()
     ->myProfile()
     ->customMyProfilePage(AccountSettingsPage::class),
 ```
@@ -169,7 +169,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
 ```php
 use Filament\Forms\Components\FileUpload;
 
-WirementBreezeeeeCore::make()
+WirementBreezeCore::make()
     ->avatarUploadComponent(fn($fileUpload) => $fileUpload->disableLabel())
     // OR, replace with your own component
     ->avatarUploadComponent(fn() => FileUpload::make('avatar_url')->disk('profile-photos'))
@@ -231,7 +231,7 @@ You can customize the validation rules for the update password component by pass
 ```php
 use Illuminate\Validation\Rules\Password;
 
-WirementBreezeeeeCore::make()
+WirementBreezeCore::make()
     ->passwordUpdateRules(
         rules: [Password::default()->mixedCase()->uncompromised(3)], // you may pass an array of validation rules as well. (default = ['min:8'])
         requiresCurrentPassword: true, // when false, the user can update their password without entering their current password. (default = true)
@@ -244,7 +244,7 @@ WirementBreezeeeeCore::make()
 If you don't want a default My Profile page component to be used, you can exclude them using the `withoutMyProfileComponents` helper.
 
 ```php
-WirementBreezeeeeCore::make()
+WirementBreezeCore::make()
     ->withoutMyProfileComponents([
         'update_password'
     ])
@@ -264,7 +264,7 @@ php artisan make:livewire MyCustomComponent
 2. Extend the `MyProfileComponent` class included with Breezy. This class implements Actions and Forms.
 
 ```php
-use Kwhorne\WirementBreezeeee\Livewire\MyProfileComponent;
+use Kwhorne\WirementBreeze\Livewire\MyProfileComponent;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 
@@ -333,7 +333,7 @@ class MyCustomComponent extends MyProfileComponent
 ```php
 use App\Livewire\MyCustomComponent;
 
-WirementBreezeeeeCore::make()
+WirementBreezeCore::make()
     ->myProfileComponents([MyCustomComponent::class])
 ```
 
@@ -344,7 +344,7 @@ You may override the existing MyProfile components to replace them with your own
 ```php
 use App\Livewire\MyCustomComponent;
 
-WirementBreezeeeeCore::make()
+WirementBreezeCore::make()
     ->myProfileComponents([
         // 'personal_info' => ,
         'update_password' => MyCustomComponent::class, // replaces UpdatePassword component with your own.
@@ -361,7 +361,7 @@ namespace App\Livewire;
 
 use Filament\Forms;
 use Filament\Notifications\Notification;
-use Kwhorne\WirementBreezeeee\Livewire\PersonalInfo;
+use Kwhorne\WirementBreeze\Livewire\PersonalInfo;
 
 class CustomPersonalInfo extends PersonalInfo
 {
@@ -399,7 +399,7 @@ class CustomPersonalInfo extends PersonalInfo
 }
 
 ```
-Now, as mentioned above, give this component to `WirementBreezeeeeCore::make()->myProfileComponents` to override the original and use your custom component.
+Now, as mentioned above, give this component to `WirementBreezeCore::make()->myProfileComponents` to override the original and use your custom component.
 
 #### Sorting My Profile components
 
@@ -413,10 +413,10 @@ A lot of the time this won't be necessary, though, as the default sort order is 
 
 ### Two Factor Authentication
 
-1. Add `Kwhorne\WirementBreezeeee\Traits\TwoFactorAuthenticatable` to your Authenticatable model:
+1. Add `Kwhorne\WirementBreeze\Traits\TwoFactorAuthenticatable` to your Authenticatable model:
 
 ```php
-use Kwhorne\WirementBreezeeee\Traits\TwoFactorAuthenticatable;
+use Kwhorne\WirementBreeze\Traits\TwoFactorAuthenticatable;
 
 class User extends Authenticatable
 {
@@ -429,7 +429,7 @@ class User extends Authenticatable
 2. Enable Two Factor Authentication using the `enableTwoFactorAuthentication()` method on the Breezy plugin.
 
 ```php
-WirementBreezeeeeCore::make()
+WirementBreezeCore::make()
     ->enableTwoFactorAuthentication(
         force: false, // force the user to enable 2FA before they can use the application (default = false)
         action: CustomTwoFactorPage::class // optionally, use a custom 2FA page
@@ -442,7 +442,7 @@ WirementBreezeeeeCore::make()
 The Breezy 2FA page can be swapped for a custom implementation (see above), same as the Filament auth pages. This allows, for example, to define a custom auth layout like so:
 
 ```php
-use Kwhorne\WirementBreezeeee\Pages\TwoFactorPage;
+use Kwhorne\WirementBreeze\Pages\TwoFactorPage;
 
 class CustomTwoFactorPage extends TwoFactorPage
 {
@@ -457,7 +457,7 @@ As of Laravel 8.x Sanctum is included with Laravel, but if you don't already hav
 Enable the Sanctum token management component:
 
 ```php
-WirementBreezeeeeCore::make()
+WirementBreezeCore::make()
     ->enableSanctumTokens(
         permissions: ['my','custom','permissions'] // optional, customize the permissions (default = ["create", "view", "update", "delete"])
     )
@@ -468,7 +468,7 @@ WirementBreezeeeeCore::make()
 This button action will prompt the user to enter their password for sensitive actions (eg. delete). This action uses the same `'password_timeout'` number of seconds found in `config/auth.php`.
 
 ```php
-use Kwhorne\WirementBreezeeee\Actions\PasswordButtonAction;
+use Kwhorne\WirementBreeze\Actions\PasswordButtonAction;
 
 PasswordButtonAction::make('secure_action')->action('doSecureAction')
 
@@ -482,10 +482,10 @@ The **Browser Sessions** feature, which is disabled by default, allows users to 
 
 #### Enabling Browser Sessions
 
-To enable the Browser Sessions feature, use the `enableBrowserSessions` method in `WirementBreezeeeeCore`:
+To enable the Browser Sessions feature, use the `enableBrowserSessions` method in `WirementBreezeCore`:
 
 ```php
-WirementBreezeeeeCore::make()
+WirementBreezeCore::make()
     ->enableBrowserSessions(condition: true) // Enable the Browser Sessions feature (default = true)
 ```
 
@@ -506,7 +506,7 @@ Users can log out of other active sessions by entering their password for confir
 If you want to customize the component or modify its behavior, you can override the `browser_sessions` component in the `myProfileComponents` method:
 
 ```php
-WirementBreezeeeeCore::make()
+WirementBreezeCore::make()
     ->myProfileComponents([
         'browser_sessions' => \App\Livewire\CustomBrowserSessions::class, // Your custom component
     ])
@@ -519,7 +519,7 @@ Filament v4+ introduserer forbedrede muligheter for å håndtere og tilpasse reg
 ## 🙋‍♀️ Ofte stilte spørsmål (FAQ)
 
 ### Hvordan fungerer 2FA-økter på tvers av flere paneler?
-Som standard bruker Wirement Breez samme guard som definert på ditt Panel. Standard er 'web'. Bare paneler som har registrert WirementBreezeeeeCore-plugin vil ha tilgang til 2FA. Hvis flere paneler bruker 2FA og deler samme guard, trenger brukeren bare å skrive inn OTP-koden én gang for varigheten av økten.
+Som standard bruker Wirement Breez samme guard som definert på ditt Panel. Standard er 'web'. Bare paneler som har registrert WirementBreezeCore-plugin vil ha tilgang til 2FA. Hvis flere paneler bruker 2FA og deler samme guard, trenger brukeren bare å skrive inn OTP-koden én gang for varigheten av økten.
 
 ### Hvordan samhandler 2FA med MustVerifyEmail?
 Når 2FA er riktig konfigurert, blir brukeren bedt om OTP-koden før e-postverifisering.
@@ -571,22 +571,22 @@ To get started quickly with Wirement Breez:
 
 2. **Add plugin to your Panel:**
    ```php
-   use Kwhorne\WirementBreezeeee\WirementBreezeeeeCore;
+   use Kwhorne\WirementBreeze\WirementBreezeCore;
    
-   ->plugin(WirementBreezeeeeCore::make())
+   ->plugin(WirementBreezeCore::make())
    ```
 
 3. **Enable 2FA (optional):**
    ```php
    ->plugin(
-       WirementBreezeeeeCore::make()
+       WirementBreezeCore::make()
            ->enableTwoFactorAuthentication()
    )
    ```
 
 4. **Add trait to User model:**
    ```php
-   use Kwhorne\WirementBreezeeee\Traits\TwoFactorAuthenticatable;
+   use Kwhorne\WirementBreeze\Traits\TwoFactorAuthenticatable;
    
    class User extends Authenticatable
    {

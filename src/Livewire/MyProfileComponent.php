@@ -1,6 +1,6 @@
 <?php
 
-namespace Kwhorne\WirementBreezeeee\Livewire;
+namespace Kwhorne\WirementBreeze\Livewire;
 
 use Filament\Actions\Concerns\InteractsWithActions;
 use Filament\Actions\Contracts\HasActions;

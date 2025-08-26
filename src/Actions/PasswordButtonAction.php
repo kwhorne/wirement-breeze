@@ -1,6 +1,6 @@
 <?php
 
-namespace Kwhorne\WirementBreezeeee\Actions;
+namespace Kwhorne\WirementBreeze\Actions;
 
 use Filament\Actions\Action;
 use Filament\Forms;

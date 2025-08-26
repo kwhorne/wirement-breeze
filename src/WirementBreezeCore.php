@@ -18,15 +18,17 @@ use Filament\Support\Concerns\EvaluatesClosures;
 use Illuminate\Cache\Repository;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Validation\Rules\Password;
-use Kwhorne\WirementBreezeeee\Livewire\BrowserSessions;
-use Kwhorne\WirementBreezeeee\Livewire\PersonalInfo;
-use Kwhorne\WirementBreezeeee\Livewire\SanctumTokens;
-use Kwhorne\WirementBreezeeee\Livewire\TwoFactorAuthentication;
-use Kwhorne\WirementBreezeeee\Livewire\UpdatePassword;
+use Kwhorne\WirementBreeze\Livewire\BrowserSessions;
+use Kwhorne\WirementBreeze\Livewire\PersonalInfo;
+use Kwhorne\WirementBreeze\Livewire\SanctumTokens;
+use Kwhorne\WirementBreeze\Livewire\TwoFactorAuthentication;
+use Kwhorne\WirementBreeze\Livewire\UpdatePassword;
+use Kwhorne\WirementBreeze\Middleware\MustTwoFactor;
+use Kwhorne\WirementBreeze\Pages\TwoFactorPage;
 use Livewire\Livewire;
 use PragmaRX\Google2FA\Google2FA;
 
-class WirementBreezeeeeCore implements Plugin
+class WirementBreezeCore implements Plugin
 {
     use EvaluatesClosures;
 

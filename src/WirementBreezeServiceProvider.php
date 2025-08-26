@@ -1,12 +1,12 @@
 <?php
 
-namespace Kwhorne\WirementBreezeeee;
+namespace Kwhorne\WirementBreeze;
 
-use Kwhorne\WirementBreezeeee\Commands\Install;
+use Kwhorne\WirementBreeze\Commands\Install;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class WirementBreezeeeeServiceProvider extends PackageServiceProvider
+class WirementBreezeServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {

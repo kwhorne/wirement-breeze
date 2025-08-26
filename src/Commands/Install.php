@@ -1,6 +1,6 @@
 <?php
 
-namespace Kwhorne\WirementBreezeeee\Commands;
+namespace Kwhorne\WirementBreeze\Commands;
 
 use Illuminate\Console\Command;
 

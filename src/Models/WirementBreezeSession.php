@@ -1,14 +1,14 @@
 <?php
 
-namespace Kwhorne\WirementBreezeeee\Models;
+namespace Kwhorne\WirementBreeze\Models;
 
 use Filament\Facades\Filament;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
-use Kwhorne\WirementBreezeeee\Events\LoginSuccess;
+use Kwhorne\WirementBreeze\Events\LoginSuccess;
 
-class WirementBreezeeeeSession extends Model
+class WirementBreezeSession extends Model
 {
     protected $guarded = [
         //

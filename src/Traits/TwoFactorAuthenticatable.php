@@ -1,11 +1,11 @@
 <?php
 
-namespace Kwhorne\WirementBreezeeee\Traits;
+namespace Kwhorne\WirementBreeze\Traits;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-use Kwhorne\WirementBreezeeee\Models\WirementBreezeeeeSession;
+use Kwhorne\WirementBreeze\Models\WirementBreezeSession;
 
 trait TwoFactorAuthenticatable
 {
@@ -23,7 +23,7 @@ trait TwoFactorAuthenticatable
 
     public function breezySessions()
     {
-        return $this->morphMany(WirementBreezeeeeSession::class, 'authenticatable');
+        return $this->morphMany(WirementBreezeSession::class, 'authenticatable');
     }
 
     public function breezySession(): Attribute

@@ -1,13 +1,13 @@
 <?php
 
-namespace Kwhorne\WirementBreezeeee\Livewire;
+namespace Kwhorne\WirementBreeze\Livewire;
 
 use Filament\Actions\Action;
 use Filament\Facades\Filament;
 use Filament\Forms;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Collection;
-use Kwhorne\WirementBreezeeee\Actions\PasswordButtonAction;
+use Kwhorne\WirementBreeze\Actions\PasswordButtonAction;
 
 class TwoFactorAuthentication extends MyProfileComponent
 {

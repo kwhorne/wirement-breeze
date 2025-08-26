@@ -1,16 +1,16 @@
 <?php
 
-namespace Kwhorne\WirementBreezeeee\Facades;
+namespace Kwhorne\WirementBreeze\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Kwhorne\WirementBreezeeee\WirementBreezeeee
+ * @see \Kwhorne\WirementBreeze\WirementBreeze
  */
-class WirementBreezeeee extends Facade
+class WirementBreeze extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Kwhorne\WirementBreezeeee\WirementBreezeeee::class;
+        return \Kwhorne\WirementBreeze\WirementBreeze::class;
     }
 }

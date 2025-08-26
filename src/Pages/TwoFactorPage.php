@@ -1,6 +1,6 @@
 <?php
 
-namespace Kwhorne\WirementBreezeeee\Pages;
+namespace Kwhorne\WirementBreeze\Pages;
 
 use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
 use DanHarrin\LivewireRateLimiting\WithRateLimiting;

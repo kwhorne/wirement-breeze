@@ -1,6 +1,6 @@
 <?php
 
-namespace Kwhorne\WirementBreezeeee\Middleware;
+namespace Kwhorne\WirementBreeze\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
@@ -19,7 +19,7 @@ class MustTwoFactor
             filament()->auth()->check() &&
             ! str($request->route()->getName())->contains('logout')
         ) {
-            /** @var WirementBreezeeeeCore $breezy */
+            /** @var WirementBreezeCore $breezy */
             $breezy = filament('wirement-breeze');
 
             $myProfileRouteName = 'filament.'.filament()->getCurrentPanel()->getId().'.pages.'.$breezy->slug();

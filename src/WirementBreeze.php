@@ -1,8 +1,8 @@
 <?php
 
-namespace Kwhorne\WirementBreezeeee;
+namespace Kwhorne\WirementBreeze;
 
-class WirementBreezeeee
+class WirementBreeze
 {
     //
 }

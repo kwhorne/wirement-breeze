@@ -1,6 +1,6 @@
 <?php
 
-namespace Kwhorne\WirementBreezeeee\Livewire;
+namespace Kwhorne\WirementBreeze\Livewire;
 
 use Filament\Facades\Filament;
 use Filament\Forms;

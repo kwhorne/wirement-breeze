@@ -5,6 +5,7 @@ namespace Kwhorne\WirementBreeze\Livewire;
 use Filament\Facades\Filament;
 use Filament\Forms\Components;
 use Filament\Forms\Form;
+use Filament\Schemas\Schema;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Hash;
 
@@ -23,7 +24,7 @@ class UpdatePassword extends MyProfileComponent
         $this->user = Filament::getCurrentPanel()->auth()->user();
     }
 
-    public function form(Form $form): Form
+    public function form(Form|Schema $form): Form|Schema
     {
         return $form
             ->schema([

@@ -7,6 +7,7 @@ use Filament\Actions\Contracts\HasActions;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
+use Filament\Schemas\Schema;
 use Livewire\Component;
 
 class MyProfileComponent extends Component implements HasActions, HasForms
@@ -40,7 +41,7 @@ class MyProfileComponent extends Component implements HasActions, HasForms
         static::$sort = $sort;
     }
 
-    public function form(Form $form): Form
+    public function form(Form|Schema $form): Form|Schema
     {
         return $form;
     }

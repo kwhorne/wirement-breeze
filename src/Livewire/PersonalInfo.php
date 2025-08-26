@@ -5,6 +5,7 @@ namespace Kwhorne\WirementBreeze\Livewire;
 use Filament\Facades\Filament;
 use Filament\Forms\Components;
 use Filament\Forms\Form;
+use Filament\Schemas\Schema;
 use Filament\Notifications\Notification;
 
 class PersonalInfo extends MyProfileComponent
@@ -70,7 +71,7 @@ class PersonalInfo extends MyProfileComponent
             ->label(__('wirement-breeze::default.fields.email'));
     }
 
-    public function form(Form $form): Form
+    public function form(Form|Schema $form): Form|Schema
     {
         return $form->schema($this->getProfileFormSchema())->columns(3)
             ->statePath('data');

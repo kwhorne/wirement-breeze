@@ -5,7 +5,7 @@ namespace Kwhorne\WirementBreeze\Livewire;
 use Carbon\Carbon;
 use Filament\Forms\Components;
 use Filament\Forms\Form;
-use Filament\Forms\Components\Actions;
+use Filament\Schemas\Schema;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -27,7 +27,7 @@ class BrowserSessions extends MyProfileComponent
         //
     }
 
-    public function form(Form $form): Form
+    public function form(Form|Schema $form): Form|Schema
     {
         return $form
             ->schema([

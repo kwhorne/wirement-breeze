@@ -10,7 +10,7 @@ class MyProfilePage extends Page
 {
     protected static BackedEnum|string|null $navigationIcon = 'heroicon-o-document-text';
 
-    protected static string $view = 'wirement-breeze::filament.pages.my-profile';
+    protected string $view = 'wirement-breeze::filament.pages.my-profile';
 
     public function getTitle(): string|Htmlable
     {

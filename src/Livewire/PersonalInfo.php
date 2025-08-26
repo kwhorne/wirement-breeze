@@ -3,8 +3,8 @@
 namespace Kwhorne\WirementBreeze\Livewire;
 
 use Filament\Facades\Filament;
-use Filament\Forms;
-use Filament\Forms\Form;
+use Filament\Schemas\Components;
+use Filament\Schemas\Schema;
 use Filament\Notifications\Notification;
 
 class PersonalInfo extends MyProfileComponent
@@ -38,7 +38,7 @@ class PersonalInfo extends MyProfileComponent
 
     protected function getProfileFormSchema(): array
     {
-        $groupFields = Forms\Components\Group::make($this->getProfileFormComponents())
+        $groupFields = Components\Group::make($this->getProfileFormComponents())
             ->columnSpan(2);
 
         return ($this->hasAvatars)
@@ -54,25 +54,25 @@ class PersonalInfo extends MyProfileComponent
         ];
     }
 
-    protected function getNameComponent(): Forms\Components\TextInput
+    protected function getNameComponent(): Components\TextInput
     {
-        return Forms\Components\TextInput::make('name')
+        return Components\TextInput::make('name')
             ->required()
             ->label(__('wirement-breeze::default.fields.name'));
     }
 
-    protected function getEmailComponent(): Forms\Components\TextInput
+    protected function getEmailComponent(): Components\TextInput
     {
-        return Forms\Components\TextInput::make('email')
+        return Components\TextInput::make('email')
             ->required()
             ->email()
             ->unique($this->userClass, ignorable: $this->user)
             ->label(__('wirement-breeze::default.fields.email'));
     }
 
-    public function form(Form $form): Form
+    public function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema($this->getProfileFormSchema())->columns(3)
             ->statePath('data');
     }
